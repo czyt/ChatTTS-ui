@@ -143,8 +143,8 @@ def remove_brackets(text):
     text=re.sub(r'\[(uv_break|laugh|lbreak|break)\]',r' \1 ',text,re.I|re.S|re.M)
 
     # 使用 re.sub 替换掉 [ ] 对
-    newt=re.sub(r'\[|\]|！|：|｛|｝', '', text)
-    return    re.sub(r'\s(uv_break|laugh|lbreak|break)(?=\s|$)', r' [\1] ', newt)
+    newt = re.sub(r'\[|\]|｛|｝', '', text)
+    return re.sub(r'\s(uv_break|laugh|lbreak|break)(?=\s|$)', r' [\1] ', newt)
 
 
 # 中英文数字转换为文字，特殊符号处理

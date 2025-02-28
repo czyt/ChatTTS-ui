@@ -98,6 +98,8 @@ class TextNormalizer():
         if lang == "zh":
             #text = text.replace(" ", "")
             # 过滤掉特殊字符
+            text = re.sub(r'[—＿・：…]', '，', text)
+            text = re.sub(r'[？！]', '。', text)
             text = re.sub(r'[——《》【】<>{}()（）#&@“”^|…\\]', '', text)
         text = self.SENTENCE_SPLITOR.sub(r'\1\n', text)
         text = text.strip()
